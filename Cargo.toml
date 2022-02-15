@@ -1,0 +1,24 @@
+[package]
+name = "create_qrcode_svg"
+version = "0.1.0"
+authors = ["Tetsuro Takao <tetsuro.takao@processtune.com>"]
+description = "A sample project with wasm-pack for my tech session"
+license = "MIT/Apache-2.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+qrcode = "0.12.0"
+libc = "0.2.107"
+wasm-bindgen = "0.2.78"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+
+# once -- rustup target add wasm32-unknown-unknown
+# build -- cargo build --bin create_qrcode_svg --target wasm32-unknown-unknown --release
+# build target -- https://docs.rust-embedded.org/embedonomicon/compiler-support.html#built-in-target
